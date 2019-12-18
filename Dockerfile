@@ -1,11 +1,15 @@
-# docker build -t streamlit_sirselim .  # -*-conf-*-
-# docker run -d -it -p 8052:8052 --name demo-uber  streamlit_sirselim
+# streamlit "Uber Pickups in NYC" demo, Docker build & run    # -*-conf-*-
+
+# Reference: https://streamlit.io/docs/
+
+# docker build -t streamlit_sirselim .
+# docker run -it -p 8052:8052 --name demo-uber  streamlit_sirselim
 
 FROM python:3.7-slim-stretch
 
 ENV PROJECT /usr/src/app
 
-# Pipenv installs Py packages & 'streamlit' into this dir
+# Where 'pipenv' installs Py packages & 'streamlit' script ($PYUB/bin)
 ENV PYUB /usr/local
 
 RUN mkdir -p $PROJECT
